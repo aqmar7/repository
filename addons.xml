@@ -422,7 +422,7 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
     </extension>
     <extension point="xbmc.addon.metadata">
     <summary lang="en">HQ Zone</summary>
-    <description lang="en">HQ Zone Live streams, Video On Demand, PPV + so much more, visit HQZone.tv to learn more. Don´t forget to follow us on Twitter @HQZoneTV.</description>
+    <description lang="en">HQ Zone Live streams, Video On Demand, PPV + so much more, visit HQZone.tv to learn more. DonÂ´t forget to follow us on Twitter @HQZoneTV.</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -729,9 +729,9 @@ http://www.husham.com</summary>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Watch content from swefilmer.</summary>
-    <summary lang="sv">Titta på innehåll från swefilmer.</summary>
+    <summary lang="sv">Titta pÃ¥ innehÃ¥ll frÃ¥n swefilmer.</summary>
     <description lang="en">With this addon you can stream content from swefilmer (www.swefilmer.com).</description>
-	<description lang="sv">Med denna addon kan du strömma innehåll från swefilmer (www.swefilmer.com).</description>
+	<description lang="sv">Med denna addon kan du strÃ¶mma innehÃ¥ll frÃ¥n swefilmer (www.swefilmer.com).</description>
     <platform>all</platform>
     <website>https://github.com/HalowTV</website>
     <source>https://github.com/HalowTV</source>
@@ -858,49 +858,13 @@ http://www.husham.com</summary>
 		<info compressed="false">http://aaastream.com/repoaddons.php</info>
 		<checksum>http://aaastream.com/repochecksum.php</checksum>
 		<datadir zip="true">http://aaastream.com/repozips.php</datadir>
+		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
+		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">http://raw.github.com/aaastream/repository/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Install my Addons</summary>
 		<description>Download and install addons from AAA Repo</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.istream" name="iSTREAM XBMC Addons Repository" version="9.0" provider-name="iSTREAM">
-	<extension point="xbmc.addon.repository" name="iSTREAM">
-		<info compressed="false">http://aaastream.com/repoaddons.php</info>
-		<checksum>http://aaastream.com/repochecksum.php</checksum>
-		<datadir zip="true">http://aaastream.com/repozips.php</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>iSTREAM XBMC Addons and Extensions</summary>
-		<description>iSTREAM XBMC Addons and Extensions</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.metalkettle" name="MetalKettles Addon Repository" version="9.4.3" provider-name="MetalKettle">
-	<extension point="xbmc.addon.repository" name="ZeusRepo Addon Repository">
-		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
-		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://github.com/aaastream/repository/tree/master/zips</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Install my Addons</summary>
-		<description>Download and install addons from ZeusRepo</description>
-		<platform>all</platform>
-	</extension>
-</addon>
-
-<addon id="repository.movieshd" name="MoviesHD Addon Repository" version="9.0.1" provider-name="MoviesHD MetalKettle">
-	<extension point="xbmc.addon.repository" name="MoviesHD Addon Repository">
-		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
-		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://github.com/aaastream/repository/tree/master/zips</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary></summary>
-		<description></description>
 		<platform>all</platform>
 	</extension>
 </addon>

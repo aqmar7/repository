@@ -1,0 +1,1 @@
+python addons_xml_generator_MK2.py

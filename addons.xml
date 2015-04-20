@@ -422,7 +422,7 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
     </extension>
     <extension point="xbmc.addon.metadata">
     <summary lang="en">HQ Zone</summary>
-    <description lang="en">HQ Zone Live streams, Video On Demand, PPV + so much more, visit HQZone.tv to learn more. DonÂ´t forget to follow us on Twitter @HQZoneTV.</description>
+    <description lang="en">HQ Zone Live streams, Video On Demand, PPV + so much more, visit HQZone.tv to learn more. Don´t forget to follow us on Twitter @HQZoneTV.</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -729,9 +729,9 @@ http://www.husham.com</summary>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Watch content from swefilmer.</summary>
-    <summary lang="sv">Titta pÃ¥ innehÃ¥ll frÃ¥n swefilmer.</summary>
+    <summary lang="sv">Titta på innehåll från swefilmer.</summary>
     <description lang="en">With this addon you can stream content from swefilmer (www.swefilmer.com).</description>
-	<description lang="sv">Med denna addon kan du strÃ¶mma innehÃ¥ll frÃ¥n swefilmer (www.swefilmer.com).</description>
+	<description lang="sv">Med denna addon kan du strömma innehåll från swefilmer (www.swefilmer.com).</description>
     <platform>all</platform>
     <website>https://github.com/HalowTV</website>
     <source>https://github.com/HalowTV</source>

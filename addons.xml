@@ -591,11 +591,11 @@ http://www.husham.com</summary>
   </extension>
 </addon>
 
-<addon id="repository.aaarepo" name="  [COLOR lime][B]AAA [/COLOR][COLOR white]Repository[/B][/COLOR]" version="1.5.0" provider-name="ZeusRepo">
-	<extension point="xbmc.addon.repository" name="AAA Repo">
-		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
-		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://github.com/aaastream/repository/tree/master/zips</datadir>
+<addon id="repository.aaarepo" name="  [COLOR lime][B]AAA [/COLOR][COLOR white]Repository[/B][/COLOR]" version="1.5.0" provider-name="AAARepo">
+	<extension point="xbmc.addon.repository" name="  [COLOR lime][B]AAA [/COLOR][COLOR white]Repository[/B][/COLOR]">
+		<info compressed="false">http://aaastream.com/repoaddons.php</info>
+		<checksum>http://aaastream.com/repochecksum.php</checksum>
+		<datadir zip="true">http://aaastream.com/repozips.php</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Install my Addons</summary>
@@ -604,7 +604,7 @@ http://www.husham.com</summary>
 	</extension>
 </addon>
 
-<addon id="repository.metalkettle" name="MetalKettles Addon Repository" version="1.4.3" provider-name="MetalKettle">
+<addon id="repository.metalkettle" name="MetalKettles Addon Repository" version="9.4.3" provider-name="MetalKettle">
 	<extension point="xbmc.addon.repository" name="ZeusRepo Addon Repository">
 		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
 		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
@@ -617,7 +617,7 @@ http://www.husham.com</summary>
 	</extension>
 </addon>
 
-<addon id="repository.movieshd" name="MoviesHD Addon Repository" version="1.0.1" provider-name="MoviesHD MetalKettle">
+<addon id="repository.movieshd" name="MoviesHD Addon Repository" version="9.0.1" provider-name="MoviesHD MetalKettle">
 	<extension point="xbmc.addon.repository" name="MoviesHD Addon Repository">
 		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
 		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>

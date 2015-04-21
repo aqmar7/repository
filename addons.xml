@@ -632,9 +632,9 @@ http://www.husham.com</summary>
 
 <addon id="repository.istream" name="iSTREAM XBMC Addons Repository" version="9.0" provider-name="iSTREAM">
 	<extension point="xbmc.addon.repository" name="iSTREAM">
-		<info compressed="false">http://aaastream.com/repoaddons.php</info>
-		<checksum>http://aaastream.com/repochecksum.php</checksum>
-		<datadir zip="true">http://aaastream.com/repozips.php</datadir>
+        <info compressed="false">https://raw.github.com/aaastream/repository/master/addons.xml</info>
+		<checksum>https://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/aaastream/repository/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>iSTREAM XBMC Addons and Extensions</summary>
@@ -645,9 +645,9 @@ http://www.husham.com</summary>
 
 <addon id="repository.metalkettle" name="MetalKettles Addon Repository" version="9.4.3" provider-name="MetalKettle">
 	<extension point="xbmc.addon.repository" name="ZeusRepo Addon Repository">
-		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
-		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://github.com/aaastream/repository/tree/master/zips</datadir>
+        <info compressed="false">https://raw.github.com/aaastream/repository/master/addons.xml</info>
+		<checksum>https://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/aaastream/repository/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>Install my Addons</summary>
@@ -658,9 +658,9 @@ http://www.husham.com</summary>
 
 <addon id="repository.movieshd" name="MoviesHD Addon Repository" version="9.0.1" provider-name="MoviesHD MetalKettle">
 	<extension point="xbmc.addon.repository" name="MoviesHD Addon Repository">
-		<info compressed="false">http://raw.github.com/aaastream/repository/master/addons.xml</info>
-		<checksum>http://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://github.com/aaastream/repository/tree/master/zips</datadir>
+        <info compressed="false">https://raw.github.com/aaastream/repository/master/addons.xml</info>
+		<checksum>https://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/aaastream/repository/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary></summary>

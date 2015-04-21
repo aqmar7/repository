@@ -1,9 +1,9 @@
 <?xml version="9.0" encoding="UTF-8" standalone="yes"?>
 <addon id="repository.istream" name="iSTREAM XBMC Addons Repository" version="9.0" provider-name="iSTREAM">
 	<extension point="xbmc.addon.repository" name="iSTREAM">
-		<info compressed="false">http://aaastream.com/repoaddons.php</info>
-		<checksum>http://aaastream.com/repochecksum.php</checksum>
-		<datadir zip="true">http://aaastream.com/repozips.php</datadir>
+        <info compressed="false">https://raw.github.com/aaastream/repository/master/addons.xml</info>
+		<checksum>https://raw.github.com/aaastream/repository/master/addons.xml.md5</checksum>
+		<datadir zip="true">https://raw.github.com/aaastream/repository/master/zips</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
 		<summary>iSTREAM XBMC Addons and Extensions</summary>

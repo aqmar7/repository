@@ -1,5 +1,110 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id="plugin.audio.boilerroom" name="Boiler Room" version="1.0.8" provider-name="MetalKettle">
+  <requires>
+    <import addon="script.module.simplejson" version="3.3.0"/>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"  version="2.1.2"/>
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.audio.housemixes" name="House Mixes" version="1.1.4" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.audio.spreaker" name="Spreaker" version="1.0.4" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.audio.televisiontunes" name="Themes" version="0.0.8" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Browse TelevisionTunes.com</summary>
+    <description lang="en">Listen to TV Theme music and songs from different television shows</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.program.configinstaller" name="ProZone" version="1.1.0" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.program.myip" name="My IP" version="1.0.3" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"></summary>
+    <description lang="en"></description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.program.oepia" name="PIA for [COLOR grey]open[/COLOR][COLOR blue]elec[/COLOR]" version="1.0.5" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Setup Private Internet Access on OpenELEC</summary>
+    <description lang="en">Setup Private Internet Access on OpenELEC.  This will only work on OpenELEC and you need an account at http://www.privateinternetaccess.com/</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.aaastream" name=".[COLOR blue]AAA Live TV[/COLOR]" version="1.9.4" provider-name="AAA">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -28,16 +133,17 @@ http://aaastream.com</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.bbciplayer" name="BBC iPlayer" version="0.0.7" provider-name="Mikey1234">
+<addon id="plugin.video.aswizard" name="..DroidSticks Wizard" version="3.0.1" provider-name="Droidsticks / MetalKettle">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.t0mm0.common" version="0.0.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
+        <provides>video executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary lang="en">BBC iPlayer</summary>
-    <description lang="en">BBC iPlayer</description>
+    <summary lang="en">DroidSticks Wizard</summary>
+    <description lang="en">Easy Install With DroidSticks XBMC Wizard</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -56,35 +162,7 @@ http://aaastream.com</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.cartoonhd" name="Cartoon HD" version="1.2.4" provider-name=".[COLOR blue]X[/COLOR]unity[COLOR blue]T[/COLOR]alk">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Cartoon HD</summary>
-    <description lang="en">Watch All Your Favourite Cartoons</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cartoonhdtwo" name="Cartoon HD Extra" version="0.0.4" provider-name=".[COLOR blue]X[/COLOR]unity[COLOR blue]T[/COLOR]alk">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Cartoon HD Extra</summary>
-    <description lang="en">Watch All Your Favourite Cartoons</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cartoons8" name="Cartoons8" version="1.0.2" provider-name="MetalKettle">
+<addon id="plugin.video.cartoons8" name="Cartoons8" version="1.0.3" provider-name="MetalKettle">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
     <import addon="script.module.t0mm0.common" version="2.0.0"/>
@@ -97,28 +175,6 @@ http://aaastream.com</description>
     <description lang="en"></description>
     <platform>all</platform>
   </extension>
-</addon>
-
-<addon id="plugin.video.concertarchive"
-       name="Concert Archive"
-       version="1.0.0"
-       provider-name="Kinkin, art by Marquerite">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.t0mm0.common" version="1.1.0"/>
-        <import addon="plugin.video.youtube"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource"
-               	library="default.py">
-        <provides>video audio</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>Great archive of concert videos and audio bootlegs</summary>
-        <description>Find classic concert videos from concertsvideos.com and bandsvideos.com.
-Plus stream or download from over 70,000 live audio bootlegs from www.archive.org</description>
-    </extension>
-
 </addon>
 
 <addon id="plugin.video.DecadoDocs" name="Decado Documentaries" version="1.0.1" provider-name="MetalKettle">
@@ -185,26 +241,6 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon id="plugin.video.F.T.V"
-       name="F.T.V"
-       version="1.3.4a.1"
-       provider-name="kinkin, icon by azad720">
-    <requires>
-        <import addon="xbmc.python" version="2.1.0"/>
-        <import addon="script.module.t0mm0.common" version="1.1.0"/>
-    </requires>
-    <extension point="xbmc.python.pluginsource"
-               	library="default.py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <summary>Free to view live streaming</summary>
-        <description>Stream Live TV from FilmOn or watch cartoons and movies in the Cartoons and more section. Add movies to library or download.</description>
-    </extension>
-
-</addon>
-
 <addon id="plugin.video.Halow" name="[COLOR red]HALOW [COLOR green] LIVE[/COLOR]" version="4.9" provider-name="Halow">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -227,6 +263,33 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Halow TV Free</summary>
     <description lang="en">[COLOR red]Free Halow TV Live is free for all containing different live channels from different countries free for the whole world FB_> IPTV Halow TV Xbmc twitter_> @HalowTV.[/COLOR]</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon
+  id="plugin.video.HaydarGames"
+  version="1.0.1"
+  name="HaydarGames"
+  provider-name="Husham.com">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  	<import addon="script.module.buggalo" version="1.1.2"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Addon made by Husham Memar</summary>
+    <description>Please enjoy and visit the Memar games channels to give Haydar a thank you for his selection of game channels to watch
+	The Haydar Memar Games Youtube Channels: Addon made by Husham Memar http://www.husham.com:
+	This Addon was a collection of all the Games chanels in youtube watched by kids these days:
+	Haydar Memar wanted to share his gammes channels with everyone:
+	Haydar Memar usually play games and post them in the memar games channels:
+	P.S. This addon will only work with KODI Helix or above
+		</description>
+
     <platform>all</platform>
   </extension>
 </addon>
@@ -265,18 +328,23 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon id="plugin.video.itv" name="ITV" version="2.2.1" provider-name="Mikey1234">
+<addon id="plugin.video.learningzone" name="Learning Zone" version="1.0.1" provider-name="MetalKettle">
   <requires>
+    <import addon="script.module.simplejson" version="3.3.0"/>
     <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.t0mm0.common" version="2.0.0"/>
+    <import addon="plugin.video.youtube" version="3.0.0"/>
+    <import addon="script.module.urlresolver"  version="2.1.2"/>
+    <import addon="script.common.plugin.cache" version="2.5.2"/>
+    <import addon="script.module.metahandler" version="2.5.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
+    <summary lang="en"> </summary>
+    <description lang="en">Welcome to the worlds largest collection of computer and technology related tutorials on XBMC/KODI</description>
     <platform>all</platform>
-    <summary>Plugin for ITV Player</summary>
-    <description>ITV Player Front End</description>
-    <disclaimer lang="en">By using This Plugin You will receive sometimes an advert which helps funds the developers developing.....we all thank you!!</disclaimer>
   </extension>
 </addon>
 
@@ -356,33 +424,6 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon
-    id="plugin.video.mutttsnutz"
-    name="The Mutts Nuts"
-    version="0.0.7"
-    provider-name="__Jas0npc__">
-   <requires>
-     <import addon="xbmc.python" version="2.1.0"/>
-	 <import addon="script.module.addon.common" version="2.0.0" />
-	 <import addon="script.module.metahandler" version="2.6.0" />
-   </requires>
-   <extension point="xbmc.python.pluginsource" library="default.py" >
-	 <provides>video</provides>
-   </extension>
-   <extension point="xbmc.python.module" library="lib" />
-   <extension point="xbmc.addon.metadata">
-	 <summary lang="en">Been Asked So Many Times, Where Can I Get The Mutt's Nut's[CR]. So HERE is an early RELEASE, SO many people WANT it NOW,[CR]JUST be AWARE that this IS A PRERELEASE,[CR]So YOU WILL GET ERRORS IN SOME PLACES.[CR]IT CAN be put anywhere apart from TOTALXXXX,MY CRAP my CHOICE.</summary>
-	 <description lang="en"></description>
-	 <platform></platform>
-     <language></language>
-	 <license></license>
-	 <forum></forum>
-	 <website></website>
-	 <source></source>
-	 <email></email>
-   </extension>
-</addon>
-
 <addon id="plugin.video.onlinemovies" name="Online Movies Pro" version="1.0.14" provider-name="MetalKettle">
   <requires>
     <import addon="script.module.simplejson" version="3.3.0"/>
@@ -403,36 +444,6 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon id="plugin.video.pakhind" name="Pak Hind" version="0.0.2" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Pak Hind Live</summary>
-    <description lang="en">Watch All Your Favourite Live Tv From India Plus Uk Sports</description>
-    <platform>all</platform>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-</addon>
-
-<addon id="plugin.video.pakindia" name="Pak India Live" version="0.1.1" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Pak India Live</summary>
-    <description lang="en">Watch All Your Favourite Live Tv From India Plus Uk Sports</description>
-    <platform>all</platform>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-</addon>
-
 <addon id="plugin.video.PPVBay"
        name="PPV Bay"
        version="1.0.0"
@@ -450,6 +461,20 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
     <summary lang="en">Premium sports streaming service</summary>
     <description lang="en"></description>
     <disclaimer lang="en"></disclaimer>
+    <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.pythontut" name="Python Tutorial Videos" version="1.0.2" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en"> </summary>
+    <description lang="en"> Learn Python using these easy to follow videos from http://buckysroom.org/ </description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -486,6 +511,20 @@ http://www.husham.com</summary>
   </extension>
 </addon>
 
+<addon id="plugin.video.spacetelescope" name="Space Telescope" version="0.0.6" provider-name="MetalKettle">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Videos and news releases from the Hubble Space Telescope project</summary>
+    <description lang="en">Videos and news releases from the Hubble Space Telescope project</description>
+    <platform>all</platform>
+  </extension>
+</addon>
+
 <addon id="plugin.video.sportsmania"
        name="SportsMania"
        version="2.2.5"
@@ -504,6 +543,27 @@ http://www.husham.com</summary>
     <description lang="en">This is a premium streaming service you will need an account from http://sportsmania.eu/ @SportsMania005 www.facebook.com/sportsnationhdtv</description>
     <disclaimer lang="en"></disclaimer>
     <platform>all</platform>
+  </extension>
+</addon>
+
+<addon id="plugin.video.swefilmer"
+       name="SweFilmer"
+       version="1.6"
+       provider-name="Halow">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">Watch content from swefilmer.</summary>
+    <summary lang="sv">Titta på innehåll från swefilmer.</summary>
+    <description lang="en">With this addon you can stream content from swefilmer (www.swefilmer.com).</description>
+	<description lang="sv">Med denna addon kan du strömma innehåll från swefilmer (www.swefilmer.com).</description>
+    <platform>all</platform>
+    <website>https://github.com/HalowTV</website>
+    <source>https://github.com/HalowTV</source>
   </extension>
 </addon>
 
@@ -535,50 +595,6 @@ http://www.husham.com</summary>
   </extension>
 </addon>
 
-<addon id="plugin.video.vdubt" name="Vdubt25" version="0.0.4" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Vdubt25</summary>
-    <description lang="en">Watch All Your Favourite Streams From Vdubt25</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-	<addon
-        id="plugin.video.XBMCKaraoke"
-        name="XBMC Karaoke addon"
-        version="1.0.6"
-        provider-name="Rodrigo">
-		<requires>
-			<import addon="xbmc.python"             	version="2.1.0"/>
-			<import addon="script.module.buggalo"   	version="1.1.5" />
-			<import addon="xbmc.addon"              	version="12.1.0"/>
-			<import addon="script.module.urlresolver"	version="1.1.0"/>
-			<import addon="script.module.simplejson"	version="2.0.10"/>
-            <import addon="script.module.addon.common"  version="2.0.0"/>
-		</requires>
-		<extension point="xbmc.python.pluginsource" library="default.py">
-			<provides>audio video</provides>
-		</extension>
-		<extension point="xbmc.addon.metadata">
-			<summary lang="en">XBMC Karaoke addon</summary>
-			<description lang="en">XBMC Karaoke addon developed by Rodrigo.[CR]For support, please visit the XBMCHUB forums.[CR][CR]Powered by [COLOR blue][B]XBMCHUB[/B].com[/COLOR]</description>
-			<disclaimer lang="en">For bugs, requests or general questions contact Rodrigo on the XBMCHUB forum.</disclaimer>
-			<platform>all</platform>
-			<license>GNU GENERAL PUBLIC LICENSE. Version 3, June 2007</license>
-			<language>en</language>
-			<forum>http://www.xbmchub.com/forums/rodrigos-xbmc-repo/14164-%5Brelease%5D-xbmc-karaoke-addon-rodrigo.html</forum>
-			<website>http://www.xbmchub.com/</website>
-			<email></email>
-			<source>https://raw.github.com/rodrigoke/XBMC.repo/master/plugin.video.XBMCKaraoke/</source>
-		</extension>
-	</addon>
-
 <addon id="plugin.video.xmovies8" name="XMovies8" version="1.0.5" provider-name="MetalKettle">
   <requires>
     <import addon="script.module.simplejson" version="3.3.0"/>
@@ -597,27 +613,6 @@ http://www.husham.com</summary>
   <extension point="xbmc.addon.metadata">
     <summary lang="en"></summary>
     <description lang="en"></description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.ZemTV-shani"
-       name="ZemTV.com"
-       version="3.3.1"
-       provider-name="shani">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-	<import addon="script.module.urlresolver" version="1.0.0"/>
-	<import addon="plugin.video.youtube" version="2.9.2"/>
-       <import addon="script.module.simplejson" />
-  </requires>
-  <extension point="xbmc.python.pluginsource"
-            library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary>ZemTV.tv XBMC Client</summary>
-    <description>Watch ZemTV.com on your XBMC. This plugin fetches the video sources from ZemTV.com and play on XBMC compatible plateforms</description>
     <platform>all</platform>
   </extension>
 </addon>

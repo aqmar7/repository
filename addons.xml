@@ -173,20 +173,6 @@ http://aaastream.com</description>
   </extension>
 </addon>
 
-<addon id="plugin.video.bbciplayer" name="BBC iPlayer" version="0.0.7" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">BBC iPlayer</summary>
-    <description lang="en">BBC iPlayer</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
 <addon id="plugin.video.bigbuckbunny" name="Big Buck Bunny" version="1.0.1" provider-name="MetalKettle">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -212,34 +198,6 @@ http://aaastream.com</description>
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Live streams from TVCatchup.com</summary>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cartoonhd" name="Cartoon HD" version="1.2.5" provider-name=".[COLOR blue]X[/COLOR]unity[COLOR blue]T[/COLOR]alk">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Cartoon HD</summary>
-    <description lang="en">Watch All Your Favourite Cartoons</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.cartoonhdtwo" name="Cartoon HD Extra" version="0.0.4" provider-name=".[COLOR blue]X[/COLOR]unity[COLOR blue]T[/COLOR]alk">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Cartoon HD Extra</summary>
-    <description lang="en">Watch All Your Favourite Cartoons</description>
     <platform>all</platform>
   </extension>
 </addon>
@@ -437,21 +395,6 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon id="plugin.video.itv" name="ITV" version="2.2.1" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <platform>all</platform>
-    <summary>Plugin for ITV Player</summary>
-    <description>ITV Player Front End</description>
-    <disclaimer lang="en">By using This Plugin You will receive sometimes an advert which helps funds the developers developing.....we all thank you!!</disclaimer>
-  </extension>
-</addon>
-
 <addon id="plugin.video.learningzone" name="Learning Zone" version="1.0.1" provider-name="MetalKettle">
   <requires>
     <import addon="script.module.simplejson" version="3.3.0"/>
@@ -595,36 +538,6 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
   </extension>
 </addon>
 
-<addon id="plugin.video.pakhind" name="Pak Hind" version="0.0.2" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Pak Hind Live</summary>
-    <description lang="en">Watch All Your Favourite Live Tv From India Plus Uk Sports</description>
-    <platform>all</platform>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-</addon>
-
-<addon id="plugin.video.pakindia" name="Pak India Live" version="0.1.1" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Pak India Live</summary>
-    <description lang="en">Watch All Your Favourite Live Tv From India Plus Uk Sports</description>
-    <platform>all</platform>
-  </extension>
-  <extension point="xbmc.service" library="service.py" start="login" />
-</addon>
-
 <addon id="plugin.video.PPVBay"
        name="PPV Bay"
        version="1.0.0"
@@ -662,7 +575,7 @@ Plus stream or download from over 70,000 live audio bootlegs from www.archive.or
 
 <addon id="plugin.video.RobinHood-PPL-List"
        name="RobinHood-People List"
-       version="2.0.1"
+       version="2.5.0"
        provider-name="Husham.com">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -772,20 +685,6 @@ http://www.husham.com</summary>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">Free Sports Streams courtesy of @uk_turk</summary>
     <description lang="en">Free Sports Streams courtesy of @uk_turk</description>
-    <platform>all</platform>
-  </extension>
-</addon>
-
-<addon id="plugin.video.vdubt" name="Vdubt25" version="0.0.4" provider-name="Mikey1234">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-        <provides>video</provides>
-  </extension>
-  <extension point="xbmc.addon.metadata">
-    <summary lang="en">Vdubt25</summary>
-    <description lang="en">Watch All Your Favourite Streams From Vdubt25</description>
     <platform>all</platform>
   </extension>
 </addon>

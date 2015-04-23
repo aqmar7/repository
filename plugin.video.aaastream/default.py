@@ -1,24 +1,35 @@
 # -*- coding: utf-8 -*-
-# Coding by h@k@M@c
-#
-# Contributors here was considered, however due to the Obfuscation method these coders
-# use I have refrained from doing so. Distribution in this manner violates the GNU GPL License
-# Remember the knowledge you have is from other generous coders and to keep the dream alive, you have to also.
-# Mikey1234, robinhood, crybo, mettlekettle, vdubts, husham take others ideas & rebrand them for their own use.
-# Freely available streams then reorganised does not make them yours.
-# Changing just 1 line in an addon and rebranding it as your own? come on robinhood, you really are a bunch of pr*cks  
-#
-# So are we wrong sharing what you have learned?
-#
-# Total hypocrisy ** AAA is here to stay & we are coming for you ** h@k@M@c
-# We have a lot of time & a lot of money, we do this for fun 
-# The only person who will benefit will be the user
-#
-#
+'''
+    AAA Stream Add-on
+    Special Thanks to the following developers for their contribution to the current code
+	               and to any future modifications.  AAA
+				   Mikey1234 Mettlekettle Kinkin Lambda spoyser Voinage Jasonpc
+				   Highways Eldorado Blazetamer eleazer coding The-one Coolwave
+				   Please contact us via facebook.com/aaastream if you are to be included
+				   
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+	Everyone should benefit from the GPL & opensource Programming
+	
+	H@k@M@c
+	
+'''
 
 
-aaastreamversion = "V1.9.4Build4"
-aaastreamdate = "19/04/2015 12:00hrs GMT"
+
+aaastreamversion = "V1.9.4Build6"
+aaastreamdate = "23/04/2015 23:00hrs GMT"
 
 import urllib, sys, xbmcplugin ,xbmcgui, xbmcaddon, xbmc, os, json, time, base64
 import re,urllib2, datetime
@@ -1213,7 +1224,7 @@ def INDEX(url):
         pages=re.compile('found(.+?)/(.+?)Page').findall(links)
         nextpage=re.compile('<font color=#FF3300>.+?</font><a href=(.+?)>.+?</a>').findall(links)
 	
-        NotNeeded, links = links.split('<li><a href="/western/">Western</a></li>')
+        NotNeeded, links = links.split('<li><a href="/western/">Western</a></li></ul></div>')
         links , NotNeeded = links.split('<div class="count_text">')
         
 

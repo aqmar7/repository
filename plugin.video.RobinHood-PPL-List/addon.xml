@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.RobinHood-PPL-List"
        name="RobinHood-People List"
-       version="2.5.0"
+       version="2.1.1"
        provider-name="Husham.com">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -21,10 +21,14 @@
   </extension>
   <extension point="xbmc.addon.metadata">
     <summary lang="en">RobinHood People Lists - downloaded for free from:
-http://www.husham.com</summary>
-    <description lang="en">RobinHood-People List - The shadow crew finest addon
-	The ShadowCrew Has been working round the clock to make this addon working great for all.
-	http://www.husham.com 
+http://robinhoodgroup-tv.info/community/index.php</summary>
+    <description lang="en">RobinHood-People List - One of the ShadowCrew finest addon
+	The ShadowCrew Has been working round the clock to bring LIVE TV / TV Shows / Films for all.
+	http://robinhoodgroup-tv.info/community/index.php 
+	
+	Settings instructions
+	Go to settings/configure and click defaults then add the source.
+	
 	P.S. Special Thanks to Shani for his Excellent work for LiveStream Pro add-on
 </description>
     <platform>all</platform>

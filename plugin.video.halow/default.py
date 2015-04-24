@@ -11,7 +11,7 @@ from metahandler import metahandlers
 from addon.common.net import Net
 
 PlaylistUrl = "http://aaastream.com"
-AddonID = 'plugin.video.Halow'
+AddonID = 'plugin.video.halow'
 Addon = xbmcaddon.Addon(AddonID)
 localizedString = Addon.getLocalizedString
 localisedTranslate = 'aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9MUZrWjlhTUQ='

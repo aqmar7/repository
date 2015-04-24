@@ -28,8 +28,8 @@
 
 
 
-aaastreamversion = "V1.9.4Build6"
-aaastreamdate = "23/04/2015 23:00hrs GMT"
+aaastreamversion = "V1.9.4Build9"
+aaastreamdate = "24/04/2015 22:30hrs GMT"
 
 import urllib, sys, xbmcplugin ,xbmcgui, xbmcaddon, xbmc, os, json, time, base64
 import re,urllib2, datetime
@@ -45,7 +45,7 @@ localizedString = Addon.getLocalizedString
 localisedTranslate = 'aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9MUZrWjlhTUQ='
 localisedMoLink = 'aHR0cDovL2tvZGkueHl6L21vdmllczIucGhw'
 localisedCatLink = 'aHR0cDovL21vdmllc2hkLmNvL2dlbnJl'
-LocalisedLa = 'aHR0cDovL3d3dy5tb3ZpZTI1LmFnLw=='
+# LocalisedLa = 'aHR0cDovL3d3dy5tb3ZpZTI1LmFnLw=='
 LocalisedReplay = 'aHR0cDovL2xpdmVmb290YmFsbHZpZGVvLmNvbS8='
 Raw = base64.decodestring('aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9')
 ChinaServer = base64.decodestring('aHR0cDovL2FhYXJlcG8ueHl6L2RvY3Mv')
@@ -82,27 +82,22 @@ import common
 
 metaget = metahandlers.MetaData(preparezip=False)
 metaset = 'true'
-custurl1 = str(base64.decodestring(LocalisedLa))
+# custurl1 = str(base64.decodestring(LocalisedLa))
+custurl1 = str('https://movie25.unblocked.pw/')
+
 
  
 addon_data_dir = os.path.join(xbmc.translatePath("special://userdata/addon_data" ).decode("utf-8"), AddonID)
 if not os.path.exists(addon_data_dir):
 	os.makedirs(addon_data_dir)
 
-	
-DecrypterFile = os.path.join(libDir,"decrypter.py")
-if not (os.path.isfile(DecrypterFile)):
-       url = "http://kodi.xyz/updatedecrypter.php"
-       urllib.urlretrieve(url,DecrypterFile)
-       xbmc.executebuiltin("UpdateLocalAddons")
-	   
-	   
-ResolverFile = os.path.join(libDir,"commonresolvers.py")
-if not (os.path.isfile(ResolverFile)):
-       url = "http://kodi.xyz/updateresolvers.php"
-       urllib.urlretrieve(url,ResolverFile)
-       xbmc.executebuiltin("UpdateLocalAddons")
-	   
+ChildLockStatus = ''	
+ChildLockFile = os.path.join(libDir,"childlock.txt")
+if not (os.path.isfile(ChildLockFile)):
+    ChildLockStatus = 'OFF'
+else:
+    ChildLockStatus = 'ON'
+	  
 tmpListFile = os.path.join(addonDir, 'tempList.txt')
 favoritesFile = os.path.join(addonDir, 'favorites.txt')
 if  not (os.path.isfile(favoritesFile)):
@@ -133,7 +128,7 @@ def Categories():
     AddDir("[COLOR white][B] MUSIC[/B][/COLOR]", "Music" ,101 ,"http://s5.postimg.org/asoby6n3b/music.png")
     AddDir('[COLOR white][B] Kidz Corner[/B][/COLOR]','indexkidz', 6,"http://s5.postimg.org/cafukol0n/kidzcorner.png")
     AddDir("[COLOR white][B] NEWSLETTER[/B][/COLOR]", "newsletter" ,4 ,"http://s5.postimg.org/mmv5t2nhj/newsletter.png")
-    AddDir("[COLOR white][B] SUPPORT[/B][/COLOR]", "support" ,6 ,"http://s5.postimg.org/cbit0evs7/support.png")
+    AddDir("[COLOR white][B] SETUP[/B][/COLOR]", "setupindex" ,6 ,"http://s5.postimg.org/cbit0evs7/support.png")
     AddDir("[COLOR white][B] CLICK ME[/B][/COLOR]", "https://www.youtube.com/watch?v=MwXEx0KK0M0" ,46, "http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
    
     xbmc.executebuiltin("Container.SetViewMode(500)") 
@@ -404,6 +399,34 @@ def StreamsList(url):
         AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
 				
     xbmc.executebuiltin("Container.SetViewMode("+str(SetViewLayout)+")")
+	
+
+def AfterDarkIndex(url):
+    links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
+    try: links = net.http_GET(ChinaServer + url).content
+    except: pass
+    links = links.encode('ascii', 'ignore').decode('ascii')
+    SetViewLayout = "50"
+     
+    LayoutType = re.compile('FORMAT"(.+?)"').findall(links)
+    if LayoutType:
+       SetViewLayout = str(LayoutType)
+       SetViewLayout = SetViewLayout.replace('[u\'','')
+       SetViewLayout = SetViewLayout.replace(']','')
+       SetViewLayout = SetViewLayout.replace('\'','')
+
+	
+    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    all_videos = regex_get_all(links, 'I:', '"#')
+    for a in all_videos:
+        mode = regex_from_to(a, 'I:"', '"')
+        url = regex_from_to(a, 'A:"', '"')
+        name = regex_from_to(a, 'B:"', '"')
+        icon = regex_from_to(a, 'C:"', '"')
+        AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
+				
+    xbmc.executebuiltin("Container.SetViewMode("+str(SetViewLayout)+")")
+	
 
 def XMLRead500(url):
     links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
@@ -1224,7 +1247,7 @@ def INDEX(url):
         pages=re.compile('found(.+?)/(.+?)Page').findall(links)
         nextpage=re.compile('<font color=#FF3300>.+?</font><a href=(.+?)>.+?</a>').findall(links)
 	
-        NotNeeded, links = links.split('<li><a href="/western/">Western</a></li></ul></div>')
+#        NotNeeded, links = links.split('<li><a href="/western/">Western</a></li></ul></div>')
         links , NotNeeded = links.split('<div class="count_text">')
         
 
@@ -1794,6 +1817,8 @@ elif mode == 4:
     Newsletter(url)
 elif mode == 6:	
 	StreamsList(url)
+elif mode == 7:	
+	AfterDarkIndex(url)
 elif mode == 9:
 	UFCSection(url)
 

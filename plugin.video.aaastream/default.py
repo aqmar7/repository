@@ -45,7 +45,7 @@ localizedString = Addon.getLocalizedString
 localisedTranslate = 'aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9MUZrWjlhTUQ='
 localisedMoLink = 'aHR0cDovL2tvZGkueHl6L21vdmllczIucGhw'
 localisedCatLink = 'aHR0cDovL21vdmllc2hkLmNvL2dlbnJl'
-# LocalisedLa = 'aHR0cDovL3d3dy5tb3ZpZTI1LmFnLw=='
+LocalisedLa = 'aHR0cDovL3d3dy5tb3ZpZTI1LmFnLw=='
 LocalisedReplay = 'aHR0cDovL2xpdmVmb290YmFsbHZpZGVvLmNvbS8='
 Raw = base64.decodestring('aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9')
 ChinaServer = base64.decodestring('aHR0cDovL2FhYXJlcG8ueHl6L2RvY3Mv')

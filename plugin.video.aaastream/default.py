@@ -28,8 +28,8 @@
 
 
 
-aaastreamversion = "V1.9.4Build9"
-aaastreamdate = "24/04/2015 22:30hrs GMT"
+aaastreamversion = "V1.9.4Build10"
+aaastreamdate = "25/04/2015 18:30hrs GMT"
 
 import urllib, sys, xbmcplugin ,xbmcgui, xbmcaddon, xbmc, os, json, time, base64
 import re,urllib2, datetime
@@ -105,10 +105,10 @@ if  not (os.path.isfile(favoritesFile)):
 	f.write('[]') 
 	f.close() 
 
-#aaastream New security key U1R1A6P4R9I3C1K 
+
 def Categories():
     Version = '[COLOR yellow][B]*FAILED TO CONNECT*[/B][/COLOR]'
-    try: Version = net.http_GET(Raw+'1FkZ9aMD').content
+    try: Version = net.http_GET('http://aaastream.com/version.php').content
     except: AddDir("[COLOR red][B] BAD CONNECTION [/B][/COLOR]", "Update" ,98, "http://s5.postimg.org/rru49d087/appgraphic.png")
 
     if Version != aaastreamdate and Version != '[COLOR yellow][B]*FAILED TO CONNECT*[/B][/COLOR]':
@@ -120,13 +120,13 @@ def Categories():
     AddDir("[COLOR white][B] UPDATE[/B][/COLOR]", "Update" ,50, "http://s5.postimg.org/pgtpss09z/update.png")
     AddDir("[COLOR white][B] FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
     AddDir("[COLOR white][B] TV BOXES[/B][/COLOR]", "suppliers" ,6 ,"http://s5.postimg.org/867wehy07/suppliers.png")
-    AddDir("[COLOR white][B] LIVE STREAMS[/B][/COLOR]", "livestreams" ,6 ,"http://s5.postimg.org/eazertq3r/live_streams.png")
+    AddDir("[COLOR white][B] STREAMS[/B][/COLOR]", "livestreams" ,6 ,"http://s5.postimg.org/eazertq3r/live_streams.png")
     AddDir("[COLOR white][B] LIVE SPORT[/B][/COLOR]", "livesport" ,6 ,"http://s5.postimg.org/jawuzrvqf/sport.png")
     AddDir("[COLOR white][B] GRANDSTAND[/B][/COLOR]", "grandstandindex" ,6 ,"http://s5.postimg.org/3tbp8heg7/replays.png")    
     AddDir("[COLOR white][B] MOVIES[/B][/COLOR]",'indexmovies',6 ,"http://s5.postimg.org/ltik0ghgn/movies.png")
     AddDir("[COLOR white][B] TV SHOWS[/B][/COLOR]",'TV',45 ,"http://s5.postimg.org/fh3eqmeef/image.png") 	
     AddDir("[COLOR white][B] MUSIC[/B][/COLOR]", "Music" ,101 ,"http://s5.postimg.org/asoby6n3b/music.png")
-    AddDir('[COLOR white][B] Kidz Corner[/B][/COLOR]','indexkidz', 6,"http://s5.postimg.org/cafukol0n/kidzcorner.png")
+    AddDir('[COLOR white][B] KIDZ CORNER[/B][/COLOR]','indexkidz', 6,"http://s5.postimg.org/cafukol0n/kidzcorner.png")
     AddDir("[COLOR white][B] NEWSLETTER[/B][/COLOR]", "newsletter" ,4 ,"http://s5.postimg.org/mmv5t2nhj/newsletter.png")
     AddDir("[COLOR white][B] SETUP[/B][/COLOR]", "setupindex" ,6 ,"http://s5.postimg.org/cbit0evs7/support.png")
     AddDir("[COLOR white][B] CLICK ME[/B][/COLOR]", "https://www.youtube.com/watch?v=MwXEx0KK0M0" ,46, "http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
@@ -136,7 +136,7 @@ def Categories():
         
 def TV():
         AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
-        AddDir("[COLOR white][B] YOUR FAVOURITE CHANNELS HERE[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
+        AddDir("[COLOR white][B]FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
         AddDir('[COLOR white]Newest Episodes [/COLOR]',custurltv+'new-episodes/',77,'http://s5.postimg.org/xsuir53zb/new.png')
         AddDir('[COLOR white]Latest Added[/COLOR]',custurltv+'latest-added/',75,'http://s5.postimg.org/5rghdfyp3/latest_added.png')
         AddDir('[COLOR white]Search[/COLOR]',custurltv,78,'http://s5.postimg.org/rhpbaq2qv/search.png')
@@ -406,7 +406,6 @@ def AfterDarkIndex(url):
     try: links = net.http_GET(ChinaServer + url).content
     except: pass
     links = links.encode('ascii', 'ignore').decode('ascii')
-    SetViewLayout = "50"
      
     LayoutType = re.compile('FORMAT"(.+?)"').findall(links)
     if LayoutType:
@@ -414,19 +413,72 @@ def AfterDarkIndex(url):
        SetViewLayout = SetViewLayout.replace('[u\'','')
        SetViewLayout = SetViewLayout.replace(']','')
        SetViewLayout = SetViewLayout.replace('\'','')
-
-	
+	   
     AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    if ChildLockStatus == 'OFF':
+       AddDir('[COLOR green][B]ChildLock is OFF[/B][/COLOR] Click here to Activate' ,"Childlock",400,"http://s5.postimg.org/o7qg63yw7/childlock.png",isFolder=False)  
+    else:
+       AddDir('[COLOR red][B]ChildLock is ON[/B][/COLOR] Click here to Deactivate' ,"Childlock",400,"http://s5.postimg.org/o7qg63yw7/childlock.png",isFolder=False)  
+	
     all_videos = regex_get_all(links, 'I:', '"#')
     for a in all_videos:
         mode = regex_from_to(a, 'I:"', '"')
         url = regex_from_to(a, 'A:"', '"')
         name = regex_from_to(a, 'B:"', '"')
         icon = regex_from_to(a, 'C:"', '"')
-        AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
+        if ChildLockStatus == 'OFF':
+           AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
 				
     xbmc.executebuiltin("Container.SetViewMode("+str(SetViewLayout)+")")
+
+def ChildLock():
+#h@k@m@c
+    pwd = ''	
+    KeyboardMessage = 'Type Password to deactivate Childlock (case sensitive)'
+    ChildLockFile = os.path.join(libDir,"childlock.txt")
+    try:
+        f = open(ChildLockFile,'r')
+        pwd = f.read()
+        pwd = regex_from_to(pwd, '{', '}')
+        f.close()
+    except:
+        pwd = ""
+        KeyboardMessage = 'Type Password to Activate Childlock (case sensitive)'
 	
+    passwordEntered = ''
+    keyboard = xbmc.Keyboard(passwordEntered, KeyboardMessage)
+    keyboard.doModal()
+    if keyboard.isConfirmed():
+       passwordEntered = keyboard.getText() .replace(' ','+')
+       if passwordEntered == None:
+          return False
+	
+    if len(passwordEntered) == 0: 
+        xbmcgui.Dialog().ok('AAA Childlock', 'No Password entered. No action taken')
+        return	   
+    else:
+        xbmcgui.Dialog().ok('AAA Childlock', 'Password Entered: '+passwordEntered)
+	   
+    if len(passwordEntered) > 0 and pwd =='':
+        try:
+            f = open(ChildLockFile, 'w') 
+            f.write('{'+passwordEntered+'}') 
+            f.close()
+            ChildLockStatus == 'ON'
+            xbmcgui.Dialog().ok('AAA Childlock', 'Childlock Activation Successful', 'Return to AAA Home Page')			
+        except:
+            ChildLockStatus == 'OFF'
+            xbmcgui.Dialog().ok('AAA Childlock', 'Childlock Activation Failed', 'Exit Afterdark & Return')
+
+    if len(passwordEntered) > 0 and pwd == passwordEntered:	
+        try:
+            os.remove(ChildLockFile)
+            xbmcgui.Dialog().ok('AAA Childlock', 'ChildLock removed', 'Return to AAA Home Page')
+        except:
+            xbmcgui.Dialog().ok('AAA Childlock', 'Cannot remove childlock', 'Reboot and try again')  
+	   
+    if len(passwordEntered) > 0 and pwd <> passwordEntered and len(pwd) > 0:
+       xbmcgui.Dialog().ok('AAA Childlock', 'Password incorrect Childlock still active')
 
 def XMLRead500(url):
     links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
@@ -436,8 +488,6 @@ def XMLRead500(url):
     links = links.encode('ascii', 'ignore').decode('ascii')	
     all_videos = regex_get_all(links, '<item>', '</item>')
     for a in all_videos:
- #       mode = regex_from_to(a, 'I:"', '"')
-        
         vurl = regex_from_to(a, '<link>', '</link>').replace('  ', ' ')
         name = regex_from_to(a, '<title>', '</title>')
         icon = regex_from_to(a, '<thumbnail>', '</thumbnail>')
@@ -1939,6 +1989,8 @@ elif mode == 210 and LibCommon == 20:
 	YouTubeCode(url)
 elif mode == 301 and LibCommon == 20:	
     ISTREAM_TopMenu(url)
+elif mode == 400:	
+	ChildLock()
 		
 xbmcplugin.endOfDirectory(int(sys.argv[1]))
 

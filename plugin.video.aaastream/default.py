@@ -1216,6 +1216,7 @@ def NEWEPISODESTV(url):
 def GETSEASONSTV(name,url):
 
         SeasonPage = net.http_GET(url).content
+        SeasonPage = SeasonPage.encode('ascii', 'ignore').decode('ascii')
         NotNeeded, SelectOut = SeasonPage.split("IMDB</a><br/>")
         SelectOut , NotNeeded = SelectOut.split('class="foot"')
         match=re.compile("<a href='/(.+?)'><strong>Episode</strong> (.+?)</a>").findall(str(SelectOut))
@@ -1227,6 +1228,7 @@ def GETSEASONSTV(name,url):
 
 def GETTVSOURCES(name,url):
         SelectOut = net.http_GET(url).content
+        SelectOut = SelectOut.encode('ascii', 'ignore').decode('ascii')
         SelectOut = regex_from_to(SelectOut, '<div id="linkname">', '</table>')
         SelectOut = SelectOut.replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
         all_genres = regex_get_all(SelectOut, '<ul id="linkname_nav">', '</a></li>')
@@ -1330,6 +1332,7 @@ def VIDEOLINKS(name,url,iconimage):
         EnableMeta = metaset
         name2 = name
         links2 = net.http_GET(url).content
+        links2 = links2.encode('ascii', 'ignore').decode('ascii')
         links2 = links2.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','')
 				  
         match2=re.compile('<h1>Links - Quality(.+?)</h1>').findall(links2)

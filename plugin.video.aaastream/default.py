@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
     AAA Stream Add-on
-    Special Thanks to the following developers for their contribution to the current code
-	               and to any future modifications.  AAA
+    Special Thanks to the following developers for their contribution to the current code,
+	               any future modifications, and to the KODI XBMC Community as a whole.  AAA
 				   Mikey1234 Mettlekettle Kinkin Lambda spoyser Voinage Jasonpc
-				   Highways Eldorado Blazetamer eleazer coding The-one Coolwave
+				   Highways Eldorado Blazetamer eleazer coding The-one Coolwave Muckyduck
 				   Please contact us via facebook.com/aaastream if you are to be included
 				   
     This program is free software: you can redistribute it and/or modify
@@ -28,8 +28,8 @@
 
 
 
-aaastreamversion = "V1.9.4Build10"
-aaastreamdate = "25/04/2015 18:30hrs GMT"
+aaastreamversion = "V1.9.5Build1"
+aaastreamdate = "27/04/2015 14:00hrs GMT"
 
 import urllib, sys, xbmcplugin ,xbmcgui, xbmcaddon, xbmc, os, json, time, base64
 import re,urllib2, datetime
@@ -42,20 +42,19 @@ PlaylistUrl = "http://aaastream.com"
 AddonID = 'plugin.video.aaastream'
 Addon = xbmcaddon.Addon(AddonID)
 localizedString = Addon.getLocalizedString
-localisedTranslate = 'aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9MUZrWjlhTUQ='
-localisedMoLink = 'aHR0cDovL2tvZGkueHl6L21vdmllczIucGhw'
-localisedCatLink = 'aHR0cDovL21vdmllc2hkLmNvL2dlbnJl'
-LocalisedLa = 'aHR0cDovL3d3dy5tb3ZpZTI1LmFnLw=='
+
 LocalisedReplay = 'aHR0cDovL2xpdmVmb290YmFsbHZpZGVvLmNvbS8='
 Raw = base64.decodestring('aHR0cDovL3Bhc3RlYmluLmNvbS9yYXcucGhwP2k9')
 ChinaServer = base64.decodestring('aHR0cDovL2FhYXJlcG8ueHl6L2RvY3Mv')
 LibDBLink = base64.decodestring('aHR0cDovL2ltdmRiLmNvbS8=')
+custurl1 = str('https://movie25.unblocked.pw/')
 
 resolve_url=['180upload', 'my.mail.ru','streamin.to', '2gbhosting', 'alldebrid', 'allmyvideos', 'auengine', 'bayfiles', 'bestreams', 'billionuploads', 'castamp', 'cheesestream', 'clicktoview', 'cloudy', 'crunchyroll', 'cyberlocker', 'daclips', 'dailymotion', 'divxstage', 'donevideo', 'ecostream', 'entroupload', 'exashare', 'facebook', 'filebox', 'filenuke', 'flashx', 'gorillavid', 'hostingbulk', 'hostingcup', 'hugefiles', 'jumbofiles', 'lemuploads', 'limevideo', 'megarelease', 'megavids', 'mightyupload', 'mooshare_biz', 'movdivx', 'movpod', 'movreel', 'movshare', 'movzap', 'mp4stream', 'mp4upload', 'mrfile', 'muchshare', 'nolimitvideo', 'nosvideo', 'novamov', 'nowvideo', 'ovfile', 'play44_net', 'played', 'playwire', 'premiumize_me', 'primeshare', 'promptfile', 'purevid', 'putlocker', 'rapidvideo', 'realdebrid', 'rpnet', 'seeon', 'sharedsx', 'sharefiles', 'sharerepo', 'sharesix', 'sharevid', 'skyload', 'slickvid', 'sockshare', 'stagevu', 'stream2k', 'streamcloud', 'teramixer', 'thefile', 'thevideo', 'trollvid', 'tubeplus', 'tunepk', 'ufliq', 'uploadc', 'uploadcrazynet', 'veeHD', 'veoh', 'vidbull', 'vidcrazynet', 'video44', 'videobb', 'videoboxone', 'videofun', 'videomega', 'videoraj', 'videotanker', 'videovalley', 'videoweed', 'videozed', 'videozer', 'vidhog', 'vidpe', 'vidplay', 'vidspot', 'vidstream', 'vidto', 'vidup_org', 'vidxden', 'vidzi', 'vidzur', 'vimeo', 'vk', 'vodlocker', 'vureel', 'watchfreeinhd', 'xvidstage', 'yourupload', 'youwatch', 'zalaa', 'zooupload', 'zshare']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
+FacebookLink = 'vUarHQRSm8c'
+DirectoryMSG = "[B][COLOR gold]FACEBOOK[/COLOR][/B]"
 
-DirectoryMSG = "[COLOR yellow][B]--[/COLOR][COLOR gold] Facebook 'AAA Stream Users' Click Here[/COLOR] [COLOR yellow]--[/COLOR][/B]"
 net = Net(user_agent='Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36')
 headers = {
     'Accept'    :   'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
@@ -82,10 +81,6 @@ import common
 
 metaget = metahandlers.MetaData(preparezip=False)
 metaset = 'true'
-# custurl1 = str(base64.decodestring(LocalisedLa))
-custurl1 = str('https://movie25.unblocked.pw/')
-
-
  
 addon_data_dir = os.path.join(xbmc.translatePath("special://userdata/addon_data" ).decode("utf-8"), AddonID)
 if not os.path.exists(addon_data_dir):
@@ -120,7 +115,7 @@ def Categories():
     AddDir("[COLOR white][B] UPDATE[/B][/COLOR]", "Update" ,50, "http://s5.postimg.org/pgtpss09z/update.png")
     AddDir("[COLOR white][B] FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
     AddDir("[COLOR white][B] TV BOXES[/B][/COLOR]", "suppliers" ,6 ,"http://s5.postimg.org/867wehy07/suppliers.png")
-    AddDir("[COLOR white][B] STREAMS[/B][/COLOR]", "livestreams" ,6 ,"http://s5.postimg.org/eazertq3r/live_streams.png")
+    AddDir("[COLOR white][B] STREAMS[/B][/COLOR]", "livestreams" ,6 ,"http://s5.postimg.org/xte1mjluv/live_streams.png")
     AddDir("[COLOR white][B] LIVE SPORT[/B][/COLOR]", "livesport" ,6 ,"http://s5.postimg.org/jawuzrvqf/sport.png")
     AddDir("[COLOR white][B] GRANDSTAND[/B][/COLOR]", "grandstandindex" ,6 ,"http://s5.postimg.org/3tbp8heg7/replays.png")    
     AddDir("[COLOR white][B] MOVIES[/B][/COLOR]",'indexmovies',6 ,"http://s5.postimg.org/ltik0ghgn/movies.png")
@@ -129,34 +124,34 @@ def Categories():
     AddDir('[COLOR white][B] KIDZ CORNER[/B][/COLOR]','indexkidz', 6,"http://s5.postimg.org/cafukol0n/kidzcorner.png")
     AddDir("[COLOR white][B] NEWSLETTER[/B][/COLOR]", "newsletter" ,4 ,"http://s5.postimg.org/mmv5t2nhj/newsletter.png")
     AddDir("[COLOR white][B] SETUP[/B][/COLOR]", "setupindex" ,6 ,"http://s5.postimg.org/cbit0evs7/support.png")
-    AddDir("[COLOR white][B] CLICK ME[/B][/COLOR]", "https://www.youtube.com/watch?v=MwXEx0KK0M0" ,46, "http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
    
     xbmc.executebuiltin("Container.SetViewMode(500)") 
     
         
 def TV():
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
-        AddDir("[COLOR white][B]FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
-        AddDir('[COLOR white]Newest Episodes [/COLOR]',custurltv+'new-episodes/',77,'http://s5.postimg.org/xsuir53zb/new.png')
-        AddDir('[COLOR white]Latest Added[/COLOR]',custurltv+'latest-added/',75,'http://s5.postimg.org/5rghdfyp3/latest_added.png')
-        AddDir('[COLOR white]Search[/COLOR]',custurltv,78,'http://s5.postimg.org/rhpbaq2qv/search.png')
-        AddDir('[COLOR white]A-Z[/COLOR]',custurltv+'tv-listings/0-9',82,'http://s5.postimg.org/t19z1a4x3/tvshows.jpg')
+    AddFacebookLink()
+    AddDir("[COLOR white][B]FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
+    AddDir('[COLOR white]Newest Episodes [/COLOR]',custurltv+'new-episodes/',77,'http://s5.postimg.org/xsuir53zb/new.png')
+    AddDir('[COLOR white]Latest Added[/COLOR]',custurltv+'latest-added/',75,'http://s5.postimg.org/5rghdfyp3/latest_added.png')
+    AddDir('[COLOR white]Search[/COLOR]',custurltv,78,'http://s5.postimg.org/rhpbaq2qv/search.png')
+    AddDir('[COLOR white]A-Z[/COLOR]',custurltv+'tv-listings/0-9',82,'http://s5.postimg.org/t19z1a4x3/tvshows.jpg')
   		
-        GenresPage = net.http_GET(custurltv+'genres/action').content
-        GenresPage = GenresPage.encode('ascii', 'ignore').decode('ascii')
-        GenresPage = regex_from_to(GenresPage, '<div class="tv_letter">', '</ul></div>')
-        GenresPage = GenresPage.replace('\"','').replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
+    GenresPage = net.http_GET(custurltv+'genres/action').content
+    GenresPage = GenresPage.encode('ascii', 'ignore').decode('ascii')
+    GenresPage = regex_from_to(GenresPage, '<div class="tv_letter">', '</ul></div>')
+    GenresPage = GenresPage.replace('\"','').replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
 
-        match=re.compile("<a href=/(.+?)>(.+?)</a>",re.DOTALL).findall(str(GenresPage))
+    match=re.compile("<a href=/(.+?)>(.+?)</a>",re.DOTALL).findall(str(GenresPage))
 		
-        for url,name in match:
-                name = CLEAN(name)
-                AddDir('[COLOR white]'+name+'[/COLOR]',custurltv+url,83,"http://www.iconarchive.com/download/i14263/hydrattz/multipurpose-alphabet/Letter-"+name[:1]+"-black.ico")
+    for url,name in match:
+        name = CLEAN(name)
+        AddDir('[COLOR white]'+name+'[/COLOR]',custurltv+url,83,"http://www.iconarchive.com/download/i14263/hydrattz/multipurpose-alphabet/Letter-"+name[:1]+"-black.ico")
 
-        xbmc.executebuiltin("Container.SetViewMode(500)")
+    xbmc.executebuiltin("Container.SetViewMode(500)")
 		
 def MusicVideos(url):
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     MusicAddDir('New Picks', LibDBLink + 'picks',102,"http://s5.postimg.org/xsuir53zb/new.png",'n')
     MusicAddDir('Latest Videos', LibDBLink + 'new',102,"http://s5.postimg.org/5rghdfyp3/latest_added.png",'n')
     MusicAddDir('Genres', LibDBLink + 'genres',103,"http://s5.postimg.org/9rkgllr3b/music_genre.png",'n')
@@ -170,8 +165,7 @@ def MusicVideos(url):
     xbmc.executebuiltin("Container.SetViewMode(500)")
 
 def ISTREAM_TopMenu(url):
-
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     data = net.http_GET(url).content
     data = data.encode('ascii', 'ignore').decode('ascii')
     title = 'NA'
@@ -369,10 +363,20 @@ def StreamUFC(name,url,thumb):
     except:
         Notify('small','AAA Sorry Link Removed:', 'Please try another one.',9000)
 		   
+def AddFacebookLink():
+    AddDir(DirectoryMSG,FacebookLink, 60, "http://s5.postimg.org/7hz1vjzaf/facebook.png", isFolder=False)
+	
 def PlayYoutubeUser(url):
     GetDataValue = "http://gdata.youtube.com/feeds/api/users/"
     GetDataValueB = "/uploads?start-index=1&max-results=12"
     YouTube_List(GetDataValue+url+GetDataValueB)
+	
+def PlayYoutubeView(url):
+    try:
+        url = "PlayMedia(plugin://plugin.video.youtube/?action=play_video&videoid="+url+")"
+        xbmc.executebuiltin(url)
+    except:
+        xbmc.executebuiltin("XBMC.Notification(AAA STREAM,This host is not supported or resolver is broken::,10000)")
 
 def StreamsList(url):
     links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
@@ -389,15 +393,18 @@ def StreamsList(url):
        SetViewLayout = SetViewLayout.replace('\'','')
 
 	
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     all_videos = regex_get_all(links, 'I:', '"#')
     for a in all_videos:
         mode = regex_from_to(a, 'I:"', '"')
         url = regex_from_to(a, 'A:"', '"')
         name = regex_from_to(a, 'B:"', '"')
         icon = regex_from_to(a, 'C:"', '"')
-        AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
-				
+        if mode == '60': 
+           AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon,isFolder=False)
+        else:
+           AddDir('[COLOR lime]'+name+'[/COLOR]',url, mode, icon)
+		   
     xbmc.executebuiltin("Container.SetViewMode("+str(SetViewLayout)+")")
 	
 
@@ -414,7 +421,7 @@ def AfterDarkIndex(url):
        SetViewLayout = SetViewLayout.replace(']','')
        SetViewLayout = SetViewLayout.replace('\'','')
 	   
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     if ChildLockStatus == 'OFF':
        AddDir('[COLOR green][B]ChildLock is OFF[/B][/COLOR] Click here to Activate' ,"Childlock",400,"http://s5.postimg.org/o7qg63yw7/childlock.png",isFolder=False)  
     else:
@@ -484,7 +491,7 @@ def XMLRead500(url):
     links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
     try: links = net.http_GET(ChinaServer + url).content
     except: pass
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     links = links.encode('ascii', 'ignore').decode('ascii')	
     all_videos = regex_get_all(links, '<item>', '</item>')
     for a in all_videos:
@@ -507,7 +514,7 @@ def YouTube_List(url):
     link = link.encode('ascii', 'ignore').decode('ascii')
     link = link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','')
  
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     all_videos = regex_get_all(link, '<entry>', '</entry>')
     for a in all_videos:
         title = regex_from_to(a, '<title type=text>', '</title>')
@@ -559,7 +566,7 @@ def FullMatches(url):
 
     r='<div class="cover"><a href="(.+?)" rel="bookmark" title="(.+?)">.+?<img src="(.+?)".+?<p class="postmetadata longdate" rel=".+?">(.+?)/(.+?)/(.+?)</p>'
     match=re.compile(r,re.DOTALL).findall(link)
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     for vurl,name,iconimage,month,day,year in match:
         _date='%s/%s/%s'%(day,month,year)  
         name='%s-[COLOR gold][%s][/COLOR]'%(name,_date)    
@@ -595,7 +602,7 @@ def SearchReplays():
 def REPLAYSGETLINKS(name,url):#  cause mode is empty in this one it will go back to first directory
     link = net.http_GET(url).content
     link = link.encode('ascii', 'ignore').decode('ascii')
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     if "proxy.link=lfv*" in link :
         import decrypter
         match = re.compile('proxy\.link=lfv\*(.+?)&').findall(link)
@@ -826,7 +833,7 @@ def search_music_videos():
     keyb = xbmc.Keyboard('', 'AAASTREAM Search Songs or Artist')
     keyb.doModal()
     if (keyb.isConfirmed()):
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         search = keyb.getText()
         encode=urllib.quote(search)
         url = 'http://imvdb.com/search?search_term=%s' % encode
@@ -883,7 +890,7 @@ def Get_video_artists_AZ(name,url):
     link = net.http_GET(url).content
     link = link.encode('ascii', 'ignore').decode('ascii')
 	
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
 	
     all_artists = regex_from_to(link, 'ul class="nameList">', '<div id="footer">')
     match = re.compile('<li><a href="(.+?)">(.+?)</a></li>').findall(all_artists)
@@ -927,7 +934,7 @@ def Music_video_genres(name,url):
     dialogWait.update(0, '[B]Will load instantly from now on[/B]',remaining_display)
     xbmc.executebuiltin("XBMC.Dialog.Close(busydialog,true)")
 	
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     for a in all_genres:
         url = regex_from_to(a, 'href="', '"')
         title = regex_from_to(a, '</i>', '<').lstrip()
@@ -947,7 +954,7 @@ def Music_video_genres(name,url):
 def Music_Charts_New(name,url):
     link = net.http_GET(url).content
     link = link.encode('ascii', 'ignore').decode('ascii')
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     all_genres = regex_get_all(link, '<td style="width: 50px">', '</td>')
     Position = 0
     for a in all_genres:
@@ -1057,7 +1064,7 @@ def SEARCHTV(url):
         keyb = xbmc.Keyboard('', 'AAASTREAM Search TV Shows')
         keyb.doModal()
         if (keyb.isConfirmed()):
-                AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+                AddFacebookLink()
                 search = keyb.getText()
                 encode=urllib.quote(search)
                 print encode
@@ -1170,7 +1177,7 @@ def LATESTADDED(url):
         links = links.encode('ascii', 'ignore').decode('ascii')
         links = regex_from_to(links, '<div class="home">', '</div>')
         links=links.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
 		
         match=re.compile('<li><a href="/(.+?)">(.+?)</a></li>',re.DOTALL).findall(str(links))
         for url,name in match:
@@ -1187,7 +1194,7 @@ def NEWLINKS(url):
         links=links.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
         NotNeeded, SelectOut = links.split('<div class="leftpage_frame">')
         SelectOut , NotNeeded = SelectOut.split('<div class="foot"')
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
 		
         match=re.compile('<li><a href="/(.+?)" >(.+?)</a></li><li>',re.DOTALL).findall(str(SelectOut))
         for url,name in match:
@@ -1203,7 +1210,7 @@ def NEWEPISODESTV(url):
         links = regex_from_to(links, '<div class="home">', '</div>')
         links=links.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
 
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
       
         match=re.compile('<li><a href="/(.+?)">(.+?)</a></li>',re.DOTALL).findall(links)
         for url,name in match:
@@ -1220,7 +1227,7 @@ def GETSEASONSTV(name,url):
         NotNeeded, SelectOut = SeasonPage.split("IMDB</a><br/>")
         SelectOut , NotNeeded = SelectOut.split('class="foot"')
         match=re.compile("<a href='/(.+?)'><strong>Episode</strong> (.+?)</a>").findall(str(SelectOut))
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for url,name in match:
              AddDir(name,custurltv+url,81,'')
 	
@@ -1233,7 +1240,7 @@ def GETTVSOURCES(name,url):
         SelectOut = SelectOut.replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
         all_genres = regex_get_all(SelectOut, '<ul id="linkname_nav">', '</a></li>')
 
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         List=[]; ListU=[]; c=0
     	for a in all_genres:
                 url = regex_from_to(a, 'http://', ';')
@@ -1279,7 +1286,7 @@ def _pbhook(numblocks, blocksize, filesize, url=None,dp=None):
         dp.close()
 
 def TOP9(url):
-         AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+         AddFacebookLink()
          EnableMeta = metaset
          links = net.http_GET(custurl1+url).content
          NotNeeded, links = links.split('<div class="banner_body">')
@@ -1294,19 +1301,18 @@ def TOP9(url):
 
 def INDEX(url):
         links = net.http_GET(custurl1+url).content
-        links=links.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
+        links=links.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','').replace('"  target="_self" title="','" target="_self" title="')
 		
         pages=re.compile('found(.+?)/(.+?)Page').findall(links)
         nextpage=re.compile('<font color=#FF3300>.+?</font><a href=(.+?)>.+?</a>').findall(links)
 	
 #        NotNeeded, links = links.split('<li><a href="/western/">Western</a></li></ul></div>')
         links , NotNeeded = links.split('<div class="count_text">')
-        
 
-        match=re.compile('<div class="movie_pic"><a href="(.+?)" target="_self" title="(.+?)"><img src="(.+?)" width="130" height="190" alt=',re.DOTALL).findall(links)
+        match=re.compile('<div class="movie_pic"><a href="(.+?)" target="_self" title="(.+?)">    <img src="(.+?)" width="130" height="190" alt=',re.DOTALL).findall(links)
 
         
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for current,last in pages:
                 AddDir('[B][COLOR yellow]AAASTREAM MOVIES Page  %s  of  %s[/COLOR][/B]'%(current,last),custurl1+url,52,"http://s5.postimg.org/ycy0pxt9j/appmovies.jpg")
 
@@ -1356,20 +1362,23 @@ def VIDEOLINKS(name,url,iconimage):
                 pass
 
 def STREAM(name,url,thumb):
+        url3 = ''
         name2 = name
         url2 = url
         link = net.http_GET(url).content
-        link = link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','')
-#        match=re.compile('onclick="location.href=(.+?)"  value="Click Here to Download"').findall(link)
-        match=re.compile('onclick="location.href=(.+?)" value="Click Here to Download"').findall(link)
+        link = link.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('" value="Click Here to Download"','"  value="Click Here to Download"')
+        match=re.compile('onclick="location.href=(.+?)"  value="Click Here to Download"').findall(link)
+#        match=re.compile('onclick="location.href=(.+?)" value="Click Here to Download"').findall(link)
 
         if match:
-                print match
-                url3 = str(match)
-                url3 = url3.replace('[u\'','')
-                url3 = url3.replace(']','')
-                url3 = url3.replace(' ','')
-                url3 = url3.replace('\'','')
+            print match
+            url3 = str(match)
+            url3 = url3.replace('[u\'','')
+            url3 = url3.replace(']','')
+            url3 = url3.replace(' ','')
+            url3 = url3.replace('\'','')
+        else:
+		    Notify('small','Problem with link:', 'Contact Facebook.com/aaastream',9000)
                 
 #        xbmcgui.Dialog().ok(str(name), url3)
         print url3
@@ -1380,7 +1389,8 @@ def STREAM(name,url,thumb):
                 streamlink = urlresolver.resolve(urllib2.urlopen(req).url)
                 addLinkMovies(name2,streamlink,thumb)
         except:
-                Notify('small','Sorry Link Removed:', 'Please try another one.',9000)
+                if len(url3) > 0:
+				   Notify('small','Sorry Link Removed:', 'Please try another one.',9000)
 
 
 def GETGENRES(url):
@@ -1392,7 +1402,7 @@ def GETGENRES(url):
 
         match=re.compile("<a href=/(.+?)>(.+?)</a>",re.DOTALL).findall(str(GenresPage))
 		
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for url,name in match:
                 name = CLEAN(name)
                 AddDir(name,custurltv+url,83,"http://www.iconarchive.com/download/i14263/hydrattz/multipurpose-alphabet/Letter-"+name[:1]+"-black.ico")
@@ -1407,7 +1417,7 @@ def ATOZ(url):
 
         match=re.compile("<a href=/(.+?)>(.+?)</a>",re.DOTALL).findall(str(AtoZPage))
 		
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         AddDir("Number 0-9",custurltv+"tv-listings/0-9",83,"http://s5.postimg.org/rru49d087/appgraphic.png")
         for url,name in match:
                 name = CLEAN(name)
@@ -1431,7 +1441,7 @@ def GETATOZLIST(name,url):
         dialogWait.update(0, '[B]Will load instantly from now on[/B]',remaining_display)
         xbmc.executebuiltin("XBMC.Dialog.Close(busydialog,true)")
 	   
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for url,name in match:
              AddDir(name,custurltv+url,84,'http://s5.postimg.org/rru49d087/appgraphic.png')
              loadedLinks = loadedLinks + 1
@@ -1448,7 +1458,7 @@ def GETATOZSEASON(name,url):
         SeasonPage , NotNeeded = SeasonPage.split('<div class="addthis">')
         SeasonPage = SeasonPage.replace('\"','').replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
         match=re.compile("<h3><a href=/(.+?)>(.+?)</a></h3>",re.DOTALL).findall(str(SeasonPage))
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for url,name in match:
              AddDir(name,custurltv+url,85,'http://s5.postimg.org/rru49d087/appgraphic.png')
 			 
@@ -1459,7 +1469,7 @@ def GETATOZEPISODE(name,url):
         EpisodePage , NotNeeded = EpisodePage.split('<div class="addthis">')
         EpisodePage = EpisodePage.replace('\"','').replace(')','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
         match=re.compile("<a href=/(.+?)><strong>(.+?)</strong>(.+?)</a></li><li>",re.DOTALL).findall(str(EpisodePage))
-        AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+        AddFacebookLink()
         for url,Blank1,name in match:
              AddDir(name,custurltv+url,81,'http://s5.postimg.org/rru49d087/appgraphic.png')
       
@@ -1499,7 +1509,7 @@ def SEARCHMOVIES():
 				
                 SelectOut=SelectOut.replace('\r','').replace('\n','').replace('\t','').replace('&nbsp;','').replace('\'','').replace('[','').replace(']','')
                 match=re.compile('<div class="movie_pic"><a href="(.+?)" target="_self" title="(.+?)"><img src="(.+?)" width="130" height="190" alt="(.+?)"></a>',re.DOTALL).findall(SelectOut)
-                AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+                AddFacebookLink()
                 for url,name,iconimage2,iconimage3 in match:
                     name = CLEAN(name)
                     AddDir(name,custurl1+url,66,iconimage2)
@@ -1699,7 +1709,7 @@ def YouTubeCode(url):
 def m3uCategory(url):
     url = Raw + url
     list = common.m3u2list(url)
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     for channel in list:
 		name = common.GetEncodeString(channel["display_name"])
 		mode = LibCommon + 26 if channel["url"].find("youtube") > 0 else 3
@@ -1709,7 +1719,7 @@ def m3uCategory(url):
 
 def Newsletter(url):
     list = common.m3u2list(ChinaServer+url)
-    AddDir(DirectoryMSG,"https://www.youtube.com/watch?v=MwXEx0KK0M0",46,"http://s5.postimg.org/7hz1vjzaf/facebook.png",isFolder=False)
+    AddFacebookLink()
     for channel in list:
 		name = common.GetEncodeString(channel["display_name"])
 		mode = LibCommon + 26 if channel["url"].find("youtube") > 0 else 3
@@ -1920,6 +1930,8 @@ elif mode == 52:
 	INDEX(url)
 elif mode == 55:	
 	HDMOVIES(url)
+elif mode == 60:	
+    PlayYoutubeView(url)
 elif mode == 66 and LibCommon == 20:	
 	VIDEOLINKS(name,url,iconimage)
 elif mode == 75 and LibCommon == 20:	

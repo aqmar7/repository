@@ -396,7 +396,7 @@ def StreamsList(url):
     xbmc.executebuiltin("Container.SetViewMode("+str(SetViewLayout)+")")
 	
 
-def AfterDarkIndex(url):
+def LockedIndex(url):
     links = 'I:"0" A:"Cannot Connect" B:"[COLOR yellow][B]*OFFSHORE DOWN*[/B][/COLOR]" C:"http://s5.postimg.org/rru49d087/appgraphic.png"'
     try: links = net.http_GET(ChinaServer + url).content
     except: pass
@@ -1869,7 +1869,7 @@ elif mode == 4:
 elif mode == 6:	
 	StreamsList(url)
 elif mode == 7:	
-	AfterDarkIndex(url)
+	LockedIndex(url)
 elif mode == 9:
 	UFCSection(url)
 

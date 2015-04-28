@@ -28,8 +28,8 @@
 
 
 
-aaastreamversion = "V1.9.5Build1"
-aaastreamdate = "27/04/2015 14:00hrs GMT"
+aaastreamversion = "V1.9.5Build2"
+aaastreamdate = "28/04/2015 13:00hrs GMT"
 
 import urllib, sys, xbmcplugin ,xbmcgui, xbmcaddon, xbmc, os, json, time, base64
 import re,urllib2, datetime
@@ -52,7 +52,7 @@ custurl1 = str('https://movie25.unblocked.pw/')
 resolve_url=['180upload', 'my.mail.ru','streamin.to', '2gbhosting', 'alldebrid', 'allmyvideos', 'auengine', 'bayfiles', 'bestreams', 'billionuploads', 'castamp', 'cheesestream', 'clicktoview', 'cloudy', 'crunchyroll', 'cyberlocker', 'daclips', 'dailymotion', 'divxstage', 'donevideo', 'ecostream', 'entroupload', 'exashare', 'facebook', 'filebox', 'filenuke', 'flashx', 'gorillavid', 'hostingbulk', 'hostingcup', 'hugefiles', 'jumbofiles', 'lemuploads', 'limevideo', 'megarelease', 'megavids', 'mightyupload', 'mooshare_biz', 'movdivx', 'movpod', 'movreel', 'movshare', 'movzap', 'mp4stream', 'mp4upload', 'mrfile', 'muchshare', 'nolimitvideo', 'nosvideo', 'novamov', 'nowvideo', 'ovfile', 'play44_net', 'played', 'playwire', 'premiumize_me', 'primeshare', 'promptfile', 'purevid', 'putlocker', 'rapidvideo', 'realdebrid', 'rpnet', 'seeon', 'sharedsx', 'sharefiles', 'sharerepo', 'sharesix', 'sharevid', 'skyload', 'slickvid', 'sockshare', 'stagevu', 'stream2k', 'streamcloud', 'teramixer', 'thefile', 'thevideo', 'trollvid', 'tubeplus', 'tunepk', 'ufliq', 'uploadc', 'uploadcrazynet', 'veeHD', 'veoh', 'vidbull', 'vidcrazynet', 'video44', 'videobb', 'videoboxone', 'videofun', 'videomega', 'videoraj', 'videotanker', 'videovalley', 'videoweed', 'videozed', 'videozer', 'vidhog', 'vidpe', 'vidplay', 'vidspot', 'vidstream', 'vidto', 'vidup_org', 'vidxden', 'vidzi', 'vidzur', 'vimeo', 'vk', 'vodlocker', 'vureel', 'watchfreeinhd', 'xvidstage', 'yourupload', 'youwatch', 'zalaa', 'zooupload', 'zshare']
 g_ignoreSetResolved=['plugin.video.dramasonline','plugin.video.f4mTester','plugin.video.shahidmbcnet','plugin.video.SportsDevil','plugin.stream.vaughnlive.tv','plugin.video.ZemTV-shani']
 
-FacebookLink = 'vUarHQRSm8c'
+FacebookLink = 'tea3JfeMGzw'
 DirectoryMSG = "[B][COLOR gold]FACEBOOK[/COLOR][/B]"
 
 net = Net(user_agent='Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.72 Safari/537.36')
@@ -112,20 +112,8 @@ def Categories():
 
    
     AddDir("[COLOR white][B] "+aaastreamversion+" [/B][/COLOR]", "Update" ,98, "http://s5.postimg.org/rru49d087/appgraphic.png")
-    AddDir("[COLOR white][B] UPDATE[/B][/COLOR]", "Update" ,50, "http://s5.postimg.org/pgtpss09z/update.png")
-    AddDir("[COLOR white][B] FAVOURITES[/B][/COLOR]", "favorites" ,30 ,"http://s5.postimg.org/60906955z/favorite.png") 
-    AddDir("[COLOR white][B] TV BOXES[/B][/COLOR]", "suppliers" ,6 ,"http://s5.postimg.org/867wehy07/suppliers.png")
-    AddDir("[COLOR white][B] STREAMS[/B][/COLOR]", "livestreams" ,6 ,"http://s5.postimg.org/xte1mjluv/live_streams.png")
-    AddDir("[COLOR white][B] LIVE SPORT[/B][/COLOR]", "livesport" ,6 ,"http://s5.postimg.org/jawuzrvqf/sport.png")
-    AddDir("[COLOR white][B] GRANDSTAND[/B][/COLOR]", "grandstandindex" ,6 ,"http://s5.postimg.org/3tbp8heg7/replays.png")    
-    AddDir("[COLOR white][B] MOVIES[/B][/COLOR]",'indexmovies',6 ,"http://s5.postimg.org/ltik0ghgn/movies.png")
-    AddDir("[COLOR white][B] TV SHOWS[/B][/COLOR]",'TV',45 ,"http://s5.postimg.org/fh3eqmeef/image.png") 	
-    AddDir("[COLOR white][B] MUSIC[/B][/COLOR]", "Music" ,101 ,"http://s5.postimg.org/asoby6n3b/music.png")
-    AddDir('[COLOR white][B] KIDZ CORNER[/B][/COLOR]','indexkidz', 6,"http://s5.postimg.org/cafukol0n/kidzcorner.png")
-    AddDir("[COLOR white][B] NEWSLETTER[/B][/COLOR]", "newsletter" ,4 ,"http://s5.postimg.org/mmv5t2nhj/newsletter.png")
-    AddDir("[COLOR white][B] SETUP[/B][/COLOR]", "setupindex" ,6 ,"http://s5.postimg.org/cbit0evs7/support.png")
-    AddFacebookLink()
-   
+    StreamsList('homemenu')
+    AddDir("[COLOR white][B] UPDATE[/B][/COLOR]", "Update" ,50, "http://s5.postimg.org/pgtpss09z/update.png")   
     xbmc.executebuiltin("Container.SetViewMode(500)") 
     
         
